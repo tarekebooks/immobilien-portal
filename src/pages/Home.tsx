@@ -3,9 +3,7 @@ import Search from '../components/search/Search';
 
 const Home: React.FC = () => {
   return (
-    <main>
-      <Search />
-    </main>
+    <Search />
   )
 }
 

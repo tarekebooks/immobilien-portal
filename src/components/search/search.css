@@ -1,0 +1,362 @@
+.home {
+    background: #f6f8fb;
+    color: #0f1b2d;
+}
+
+.banner-search {
+    position: relative;
+    min-height: 520px;
+    padding: 5.5rem 1.5rem 4rem;
+    background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.55), transparent 45%),
+        linear-gradient(135deg, #6f8f83 0%, #8aa28a 35%, #2c5b59 100%);
+    color: #fff;
+}
+
+.banner-search-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.banner-search h1 {
+    font-family: "DM Serif Display", serif;
+    font-size: clamp(2.1rem, 3.2vw, 3.2rem);
+    margin-bottom: 0.75rem;
+    text-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.banner-search p {
+    font-size: 1.05rem;
+    opacity: 0.95;
+    margin-bottom: 2.5rem;
+}
+
+.search-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(15, 27, 45, 0.2);
+    padding: 0;
+    overflow: hidden;
+    text-align: left;
+}
+
+.search-tabs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-bottom: 1px solid #e6ebf2;
+    background: #fdfdfd;
+}
+
+.search-tabs button {
+    padding: 1rem 1.5rem;
+    background: transparent;
+    border: none;
+    font-weight: 600;
+    color: #6a778b;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+}
+
+.search-tabs button.active {
+    color: #0f1b2d;
+    border-color: #0f1b2d;
+}
+
+.search-form {
+    display: grid;
+    grid-template-columns: 1fr 220px 140px;
+    gap: 1rem;
+    padding: 1.5rem;
+    align-items: center;
+}
+
+.field {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border: 1px solid #e3e8ef;
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    background: #fbfcfe;
+    color: #7b879a;
+}
+
+.field input,
+.field select {
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 100%;
+    font-size: 0.95rem;
+    color: #2a3242;
+    font-family: inherit;
+}
+
+.field.select {
+    padding-right: 0.75rem;
+}
+
+.primary {
+    background: #0f1b2d;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 0.85rem 1.25rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(15, 27, 45, 0.2);
+}
+
+.promo {
+    margin: 1.75rem auto 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    background: #fff;
+    color: #0f1b2d;
+    border: none;
+    border-radius: 14px;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 12px 24px rgba(15, 27, 45, 0.2);
+    cursor: pointer;
+}
+
+.promo-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: #e8f0ff;
+    color: #0f1b2d;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+}
+
+.promo-text {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.promo-text strong {
+    font-size: 0.95rem;
+}
+
+.promo-text span {
+    font-size: 0.85rem;
+    color: #5c6b7b;
+}
+
+.section {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 3.5rem 1.5rem;
+}
+
+.section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.section-head h2 {
+    font-size: 1.4rem;
+    color: #0f1b2d;
+}
+
+.text-link {
+    background: none;
+    border: none;
+    color: #203558;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: pointer;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.property-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 12px 24px rgba(15, 27, 45, 0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.property-media {
+    position: relative;
+    height: 200px;
+}
+
+.property-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 0.3rem 0.6rem;
+    background: #eef3ff;
+    color: #223b6f;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.badge.highlight {
+    background: #0f1b2d;
+    color: #fff;
+}
+
+.like {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0, 0, 0, 0.45);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.property-body {
+    padding: 1.2rem 1.4rem 1.4rem;
+}
+
+.property-body h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.4rem;
+}
+
+.property-body p {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: #637083;
+    font-size: 0.9rem;
+}
+
+.meta {
+    display: flex;
+    gap: 1.2rem;
+    margin-top: 1rem;
+    color: #0f1b2d;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.cta-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.cta-card {
+    border-radius: 18px;
+    padding: 2rem;
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    box-shadow: 0 18px 30px rgba(15, 27, 45, 0.08);
+}
+
+.cta-card h3 {
+    margin-bottom: 0.7rem;
+}
+
+.cta-card p {
+    color: #5f6d80;
+    margin-bottom: 1.3rem;
+}
+
+.cta-card.light {
+    background: #fff;
+}
+
+.cta-card.dark {
+    background: #0f2f5e;
+    color: #fff;
+}
+
+.cta-card.dark p {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.cta-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.cta-card.light .cta-icon {
+    background: #f3f6fb;
+}
+
+.ghost {
+    background: #fff;
+    color: #0f2f5e;
+    border: none;
+    border-radius: 10px;
+    padding: 0.85rem 1.25rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .search-form {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 720px) {
+    .banner-search {
+        padding: 4.5rem 1.25rem 3.5rem;
+    }
+
+    .section-head {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
