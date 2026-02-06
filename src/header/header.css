@@ -1,0 +1,52 @@
+header {
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    height: 5rem;
+    width: 100%;
+}
+
+.logo {
+    color: #0f1653;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    height: 6em;
+    padding: 1.5em;
+    text-transform: uppercase;
+    transition: color 300ms;
+    -webkit-transition: color 300ms;
+    -moz-transition: color 300ms;
+    -ms-transition: color 300ms;
+    -o-transition: color 300ms;
+}
+.logo-icon{
+    color: #0f1653;
+    margin-right: 0.2rem;
+    height: 1.5em;
+    width: 1.5em;
+}
+
+.nav-items {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-items a{
+    color: #0f1653;
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.nav-items a:hover {
+    color: opacity(0.8) #0f1653;
+    transition: color 300ms;
+}
