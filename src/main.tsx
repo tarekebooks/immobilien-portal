@@ -9,6 +9,7 @@ import Home from './pages/Home.tsx'
 import ForSale from './pages/ForSale.tsx'
 import ForRent from './pages/ForRent.tsx'
 import Contact from './pages/Contact.tsx'
+import PostListing from './pages/PostListing.tsx'
 import NotFound from './components/exceptions/NotFound.tsx'
 
 createRoot(document.getElementById('root')!).render(
@@ -22,6 +23,7 @@ createRoot(document.getElementById('root')!).render(
             <Route path="/for-sale" element={<ForSale />} />
             <Route path="/for-rent" element={<ForRent />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/create-new-property" element={<PostListing />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>

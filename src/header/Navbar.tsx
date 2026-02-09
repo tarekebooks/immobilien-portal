@@ -28,7 +28,9 @@ const Navbar: React.FC = () => {
               ))}
             </select>
             <button className="login-btn">{t('nav.login')}</button>
-            <button className="register-btn">{t('nav.post')}</button>
+            <Link className="register-btn" to="/create-new-property">
+              {t('nav.post')}
+            </Link>
         </div>
 
     </header>
