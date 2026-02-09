@@ -64,10 +64,35 @@
 
 .search-form {
     display: grid;
-    grid-template-columns: 1fr 220px 140px;
     gap: 1rem;
     padding: 1.5rem;
+}
+
+.search-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 220px 170px 160px;
+    gap: 1rem;
     align-items: center;
+}
+
+.search-form.compact .search-row {
+    grid-template-columns: minmax(0, 1fr) 220px 180px 160px;
+}
+
+.search-form.expanded .search-row {
+    grid-template-columns: minmax(0, 1fr) 220px 160px;
+}
+
+.search-extra {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    align-items: center;
+}
+
+.search-extra .primary {
+    justify-self: end;
+    min-width: 180px;
 }
 
 .field {
@@ -105,6 +130,20 @@
     font-weight: 600;
     cursor: pointer;
     box-shadow: 0 10px 20px rgba(15, 27, 45, 0.2);
+}
+
+.filter-toggle {
+    background: #fff;
+    color: #0f1b2d;
+    border: 1px solid #e3e8ef;
+    border-radius: 10px;
+    padding: 0.85rem 1.25rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.filter-toggle.active {
+    border-color: #0f1b2d;
 }
 
 .promo {
@@ -336,8 +375,16 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .search-form {
+    .search-row {
         grid-template-columns: 1fr;
+    }
+
+    .search-extra {
+        grid-template-columns: 1fr;
+    }
+
+    .search-extra .primary {
+        justify-self: stretch;
     }
 
     .cta-grid {

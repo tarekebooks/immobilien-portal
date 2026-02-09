@@ -10,6 +10,7 @@ type SearchMode = 'buy' | 'rent' | 'auctions'
 const Search: React.FC = () => {
     const { t } = useI18n()
     const [mode, setMode] = useState<SearchMode>('buy')
+    const [showFilters, setShowFilters] = useState(false)
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
@@ -48,8 +49,12 @@ const Search: React.FC = () => {
                                 {t('bannerSearch.auctions')}
                             </button>
                         </div>
-                        <form className="search-form" onSubmit={handleSubmit}>
-                            <div className="field">
+                        <form
+                            className={`search-form ${showFilters ? 'expanded' : 'compact'}`}
+                            onSubmit={handleSubmit}
+                        >
+                            <div className="search-row">
+                                <div className="field">
                                 <FaSearch />
                                 <input
                                     type="text"
@@ -57,63 +62,81 @@ const Search: React.FC = () => {
                                     aria-label={t('bannerSearch.locationLabel')}
                                     required
                                 />
+                                </div>
+                                <div className="field select">
+                                    <select aria-label={t('bannerSearch.propertyTypeLabel')} required>
+                                        <option value="">{t('bannerSearch.all')}</option>
+                                        <option value="house">{t('bannerSearch.house')}</option>
+                                        <option value="apartment">{t('bannerSearch.apartment')}</option>
+                                        <option value="commercial">{t('bannerSearch.commercial')}</option>
+                                    </select>
+                                </div>
+                                {!showFilters ? (
+                                    <button className="primary" type="submit">
+                                        {t('bannerSearch.search')} ({mode})
+                                    </button>
+                                ) : null}
+                                <button
+                                    className={`filter-toggle ${showFilters ? 'active' : ''}`}
+                                    type="button"
+                                    onClick={() => setShowFilters((prev) => !prev)}
+                                >
+                                    {showFilters ? 'Less Filters' : 'More Filters'}
+                                </button>
                             </div>
-                            <div className="field select">
-                                <select aria-label={t('bannerSearch.propertyTypeLabel')} required>
-                                    <option value="">{t('bannerSearch.all')}</option>
-                                    <option value="house">{t('bannerSearch.house')}</option>
-                                    <option value="apartment">{t('bannerSearch.apartment')}</option>
-                                    <option value="commercial">{t('bannerSearch.commercial')}</option>
-                                </select>
-                            </div>
-                            <div className="field">
-                                <input
-                                    type="number"
-                                    min={0}
-                                    placeholder={t('bannerSearch.priceMin')}
-                                    aria-label={t('bannerSearch.priceMin')}
-                                    required
-                                />
-                            </div>
-                            <div className="field">
-                                <input
-                                    type="number"
-                                    min={0}
-                                    placeholder={t('bannerSearch.priceMax')}
-                                    aria-label={t('bannerSearch.priceMax')}
-                                    required
-                                />
-                            </div>
-                            <div className="field">
-                                <input
-                                    type="number"
-                                    min={0}
-                                    placeholder={t('bannerSearch.beds')}
-                                    aria-label={t('bannerSearch.beds')}
-                                    required
-                                />
-                            </div>
-                            <div className="field">
-                                <input
-                                    type="number"
-                                    min={0}
-                                    placeholder={t('bannerSearch.baths')}
-                                    aria-label={t('bannerSearch.baths')}
-                                    required
-                                />
-                            </div>
-                            <div className="field">
-                                <input
-                                    type="number"
-                                    min={0}
-                                    placeholder={t('bannerSearch.area')}
-                                    aria-label={t('bannerSearch.area')}
-                                    required
-                                />
-                            </div>
-                            <button className="primary" type="submit">
-                                {t('bannerSearch.search')} ({mode})
-                            </button>
+
+                            {showFilters ? (
+                                <div className="search-extra">
+                                    <div className="field">
+                                        <input
+                                            type="number"
+                                            min={0}
+                                            placeholder={t('bannerSearch.priceMin')}
+                                            aria-label={t('bannerSearch.priceMin')}
+                                            required
+                                        />
+                                    </div>
+                                    <div className="field">
+                                        <input
+                                            type="number"
+                                            min={0}
+                                            placeholder={t('bannerSearch.priceMax')}
+                                            aria-label={t('bannerSearch.priceMax')}
+                                            required
+                                        />
+                                    </div>
+                                    <div className="field">
+                                        <input
+                                            type="number"
+                                            min={0}
+                                            placeholder={t('bannerSearch.beds')}
+                                            aria-label={t('bannerSearch.beds')}
+                                            required
+                                        />
+                                    </div>
+                                    <div className="field">
+                                        <input
+                                            type="number"
+                                            min={0}
+                                            placeholder={t('bannerSearch.baths')}
+                                            aria-label={t('bannerSearch.baths')}
+                                            required
+                                        />
+                                    </div>
+                                    <div className="field">
+                                        <input
+                                            type="number"
+                                            min={0}
+                                            placeholder={t('bannerSearch.area')}
+                                            aria-label={t('bannerSearch.area')}
+                                            required
+                                        />
+                                    </div>
+                                    <button className="primary" type="submit">
+                                        {t('bannerSearch.search')} ({mode})
+                                    </button>
+                                </div>
+                            ) : null}
                         </form>
                     </div>
                     <button className="promo" type="button">
