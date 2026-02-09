@@ -3,6 +3,8 @@ import type { ReactNode } from 'react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useNavigate } from 'react-router-dom'
+import { usePostAd } from './PostAdContext'
 import {
   FiArrowLeft,
   FiArrowRight,
@@ -240,6 +242,8 @@ const addressSamples = [
 ]
 
 export default function BasicInfoStep() {
+  const navigate = useNavigate()
+  const { state, setBasicInfo } = usePostAd()
   const {
     register,
     handleSubmit,
@@ -249,11 +253,11 @@ export default function BasicInfoStep() {
   } = useForm<BasicInfoFormData>({
     resolver: zodResolver(basicInfoSchema),
     defaultValues: {
-      propertyType: '',
-      transactionType: 'sale',
-      askingPrice: undefined,
-      areaSqm: undefined,
-      address: '',
+      propertyType: state.basicInfo?.propertyType ?? '',
+      transactionType: state.basicInfo?.transactionType ?? 'sale',
+      askingPrice: state.basicInfo?.askingPrice,
+      areaSqm: state.basicInfo?.areaSqm,
+      address: state.basicInfo?.address ?? '',
     },
     mode: 'onBlur',
   })
@@ -272,6 +276,8 @@ export default function BasicInfoStep() {
 
   const onSubmit = (data: BasicInfoFormData) => {
     console.log('Basic info submitted', data)
+    setBasicInfo(data)
+    navigate('/create-new-property/photos')
   }
 
   return (

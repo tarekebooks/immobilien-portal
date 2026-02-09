@@ -10,6 +10,8 @@ import ForSale from './pages/ForSale.tsx'
 import ForRent from './pages/ForRent.tsx'
 import Contact from './pages/Contact.tsx'
 import PostListing from './pages/PostListing.tsx'
+import PhotosMediaStep from './components/post-ad/PhotosMediaStep.tsx'
+import { PostAdProvider } from './components/post-ad/PostAdContext.tsx'
 import NotFound from './components/exceptions/NotFound.tsx'
 
 createRoot(document.getElementById('root')!).render(
@@ -17,16 +19,22 @@ createRoot(document.getElementById('root')!).render(
     <BrowserRouter>
       <I18nProvider>
         <Navbar />
-        <div className="main-content">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/for-sale" element={<ForSale />} />
-            <Route path="/for-rent" element={<ForRent />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/create-new-property" element={<PostListing />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </div>
+        <PostAdProvider>
+          <div className="main-content">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/for-sale" element={<ForSale />} />
+              <Route path="/for-rent" element={<ForRent />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/create-new-property" element={<PostListing />} />
+              <Route
+                path="/create-new-property/photos"
+                element={<PhotosMediaStep />}
+              />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </div>
+        </PostAdProvider>
         <Footer />
       </I18nProvider>
     </BrowserRouter>
